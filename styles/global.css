@@ -1,0 +1,139 @@
+/* Styles de base pour le corps et les polices */
+body {
+    font-family: 'Noto Sans', sans-serif;
+    color: #666;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex; /* Utilisation de Flexbox */
+    height: 100vh; /* Hauteur de la fenêtre */
+}
+
+/* Conteneur principal divisé en 1/3 et 2/3 */
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrage vertical des éléments */
+    align-items: flex-start; /* Alignement horizontal à gauche */
+    gap: 20px;
+    padding: 20px;
+    background-color: #FFF;
+    width: 33.33%; /* Un tiers de la largeur */
+    min-height: 100%; /* Prend toute la hauteur disponible */
+}
+
+.logo {
+    width: 80px;
+    height: 78px;
+    align-self: center; /* Centre le logo horizontalement dans son conteneur */
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: center; /* Centre la boîte d'info horizontalement dans son conteneur */
+}
+
+.view-trips, .ask-question {
+    display: inline-flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: center; /* Centrage horizontal des textes dans les boutons */
+    gap: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%; /* Assure une largeur uniforme pour les boutons */
+}
+
+.view-trips {
+    background: #33305E;
+    border: none;
+    color: white;
+}
+
+.ask-question {
+    background: var(--W-Background, #FFF);
+    border: 1px solid #FABB5C;
+}
+
+/* Styles des champs du formulaire */
+.main-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrage vertical des éléments du formulaire */
+    align-items: center; /* Centrage horizontal */
+    padding: 20px;
+    gap: 20px;
+    width: 50%; /* Deux tiers de la largeur */
+    height: 80%; /* Hauteur ajustée pour remplir l'espace */
+    border: 2px solid #FABB5C; /* Ajout d'une bordure orange autour du formulaire */
+    border-radius: 8px; /* Ajout d'arrondis aux coins de la bordure */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel: ajoute une ombre pour un effet de profondeur */
+}
+
+
+input[type="text"], select, input[type="date"] {
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    align-self: center;
+    border-radius: 8px;
+    border: 2px solid #7A5CFA; /* Mise à jour de la couleur de bordure */
+    background: var(--W-Background, #FFF);
+    width: 80%;
+}
+
+/* Modifier la bordure lors du survol et lors de la focalisation (clic) */
+input[type="text"]:hover, select:hover, input[type="date"]:hover,
+input[type="text"]:focus, select:focus, input[type="date"]:focus {
+    border-color: #FABB5C; /* Changement de couleur pour le survol et le clic */
+}
+
+select {
+    cursor: pointer;
+}
+
+/* Gestion des choix avec réactivité */
+select:hover, .view-trips:hover, .ask-question:hover {
+    background-color: #f0f0f0;
+}
+
+.confirm-button {
+    width: 201px;
+    height: 56px;
+    background-color: #33305E;
+    color: white;
+    text-align: center;
+    line-height: 56px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* SVG spécifique pour le bouton */
+.confirm-button svg {
+    fill: currentColor;
+}
+
+/* Styles additionnels pour les notifications et les interactions */
+.notification {
+    color: red;
+    font-size: 14px;
+}
+
+/* Styles spécifiques pour certains champs au survol */
+select:focus, input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #7A5CFA;
+    background-color: #EEE;
+}
+
+/* Utilisation des variables CSS pour le thème */
+:root {
+    --W-Background: #FFF;
+    --Keatext-purple: #7A5CFA;
+}
